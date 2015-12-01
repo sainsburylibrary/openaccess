@@ -1,2 +1,0 @@
-# openaccess
-Open Access information

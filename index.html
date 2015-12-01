@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-	<meta charset="utf-8" />
-	<title></title>
-	<meta name="generator" content="BBEdit 11.1" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+    <link rel="shortcut icon" href="https://my.sbs.ox.ac.uk/sites/default/files/Intranet-2-32px.ico">
+    <title>Key Management Journals</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+	<script src="./js/jquery.floatThead.min.js"></script>
+	<script type='text/javascript' src="./js/site.js"></script>
 	<link type="text/css" rel="stylesheet" href="https://my.sbs.ox.ac.uk/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
 	<link type="text/css" rel="stylesheet" href="https://my.sbs.ox.ac.uk/sites/default/files/css/css_igEjC2deS11d8oRpcSidor-xAsoQ-Z6pJnRzu_bswqc.css" media="all" />
 	<link type="text/css" rel="stylesheet" href="https://my.sbs.ox.ac.uk/sites/default/files/css/css_Q94_r7c8pkccffaE26O3EjrnuZ3hawFXsn4gcXLKkzg.css" media="all" />
@@ -13,112 +17,50 @@
 	<!--[if (lt IE 9)&(!IEMobile 7)]>
 <link type="text/css" rel="stylesheet" href="https://my.sbs.ox.ac.uk/sites/default/files/css/css_HuXQoTYcmGEa628nJx2jQFv781Hx1TMobDQe9fVEGyE.css" media="screen" />
 <![endif]-->
-
-	<style>
-    .floatingHeader {
-      position: fixed;
-      top: 0;
-      visibility: hidden;
-    }
-    tr.persist-header
-    {
-      background-color: white;
-      border-bottom: 1px solid #ccc;
-      border-right: 1px solid #ccc;
-    }
-    tr#academy-of-management-annals
-    { 
-    	border-top: none;
-    }
-	/* tr td {border:solid 1px red;} */
-    tr td:nth-child(1) {width=15%;}
-	tr td:nth-child(2) {min-width: 10%; width=10%; max-width: 10%;}
-	tr td:nth-child(3) {min-width: 5%; width=5%; max-width: 5%;}
-	tr td:nth-child(4) {min-width: 5%; width=5%; max-width: 5%;}
-	tr td:nth-child(5) {min-width: 5%; width=5%; max-width: 5%;}
-	tr td:nth-child(6) {min-width: 5%; width=5%; max-width: 5%;}
-	tr td:nth-child(7) {min-width: 15%; width=15%; max-width: 15%;}
-	tr td:nth-child(8) {min-width: 5%; width=5%; max-width: 5%;}
-	tr td:nth-child(9) {min-width: 5%; width=5%; max-width: 5%;}
-	tr td:nth-child(10) {min-width: 5%; width=5%; max-width: 5%;}
-	tr td:nth-child(11) {min-width: 10%; width=10%; max-width: 10%;}
-	tr td:nth-child(12) {min-width: 2%; width=2%; max-width: 2%;}
-	tr td:nth-child(13) {min-width: 2%; width=2%; max-width: 2%;}
-	tr td:nth-child(14) {min-width: 2%; width=2%; max-width: 2%;}
-	tr td:nth-child(15) {min-width: 5%; width=5%; max-width: 5%;}
-	tr td:nth-child(16) {min-width: 4%; width=4%; max-width: 4%;}
-		</style>
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-
-
-  <script>
-    function UpdateTableHeaders() {
-       $(".persist-area").each(function() {
-
-           var el             = $(this),
-               offset         = el.offset(),
-               scrollTop      = $(window).scrollTop(),
-               floatingHeader = $(".floatingHeader", this)
-
-           if ((scrollTop > offset.top) && (scrollTop < offset.top + el.height())) {
-               floatingHeader.css({
-                "visibility": "visible",
-               });
-           } else {
-               floatingHeader.css({
-                "visibility": "hidden"
-               });
-           };
-       });
-    }
-
-// DOM Ready
-$(function() {
-
-
-   
-   
-    var $floatingHeader = $(".persist-header", this).clone();
-
-    $floatingHeader.children().width(function (i, val) {
-    return $(".persist-header").children().eq(i).width();    
-    });
-
-    $floatingHeader.css("width", $(".persist-header", this).width()).addClass("floatingHeader");
-    $(".persist-header", this).before($floatingHeader);   
-   
-
-   $(window)
-    .scroll(UpdateTableHeaders)
-    .trigger("scroll");
-
-});
-  </script>
-
 </head>
-<body style="margin: 2% 4%">
+<style type='text/css'>
+    table.collapse {
+        border-collapse:collapse;
+    }
+    body {
+ 		margin: 2em 4em;
+    }
+    
+        .table {
+        /* here is some css that will make your floated table headers have a 10px gap */
+        margin-top: 10px !important;
+    }
+
+    .table.floatThead-table {
+        /* and here is how you would fix that issue */
+        margin-top: 0px !important;
+    }
+
+</style>
+
+<body>
 <h2><strong>Key Management Journals</strong></h2>
-<table class="persist-area">
+<table class='table'>
+	<thead>
+		<tr> 
+			<th><strong>Journal Title</strong></th>
+			<th><strong>ISSN</strong></th>
+			<th><strong>Link to Sherpa RoMEO</strong></th>
+			<th><strong>Link to Journal website</strong></th>
+			<th><strong>GREEN OA</strong></th>
+			<th><strong>Embargo</strong></th>
+			<th><strong>Publisher Requirements for Green OA</strong></th>
+			<th><strong>Publisher statement required</strong></th>
+			<th><strong>GOLD OA</strong></th>
+			<th><strong>Cost of APC (excluding VAT)</strong></th>
+			<th><strong>Publisher Permitted licences for Gold OA</strong></th>
+			<th><strong>WoK Top 50</strong></th>
+			<th><strong>FT45</strong></th>
+			<th><strong>WoK Impact Factor</strong></th>
+			<th><strong>WoK Eigenfactor Score</strong></th>
+			<th><strong>Scopus SJR (Scimago Journal Rank)</strong></th>
+		</th>
 	<tbody>
-		<tr class="persist-header">
-			<td><strong>Journal Title</strong></td>
-			<td><strong>ISSN</strong></td>
-			<td><strong>Link to Sherpa RoMEO</strong></td>
-			<td><strong>Link to Journal website</strong></td>
-			<td><strong>GREEN OA</strong></td>
-			<td><strong>Embargo</strong></td>
-			<td><strong>Publisher Requirements for Green OA</strong></td>
-			<td><strong>Publisher statement required</strong></td>
-			<td><strong>GOLD OA</strong></td>
-			<td><strong>Cost of APC (excluding VAT)</strong></td>
-			<td><strong>Publisher Permitted licences for Gold OA</strong></td>
-			<td><strong>WoK Top 50</strong></td>
-			<td><strong>FT45</strong></td>
-			<td><strong>WoK Impact Factor</strong></td>
-			<td><strong>WoK Eigenfactor Score</strong></td>
-			<td><strong>Scopus SJR (Scimago Journal Rank)</strong></td>
-		</tr>
 		<tr id="academy-of-management-annals">
 			<td>Academy of Management Annals&nbsp;</td>
 			<td>1941-6520</td>
@@ -7408,9 +7350,29 @@ $(function() {
 			<td>-</td>
 		</tr>
 	</tbody>
-</table>
-<p>
-	&nbsp;
-</p>
+                </table>    
+                <p>&nbsp;</p>    
+
+    <script type="text/javascript">
+        $(function(){
+            $('table').floatThead({
+                top: pageTop
+            });
+          //  alignmentDebugger($('table'))
+            var useAbs = true;
+            $("#makeFixed").on("click", function(e){
+                e.preventDefault();
+                useAbs = !useAbs;
+                $('table').floatThead('destroy').floatThead({
+                    top: pageTop,
+                    position: useAbs ? 'absolute': 'fixed'
+                });
+                $(this).text("Re-initialize plugin with "+(useAbs ? "fixed" : "absolute") +" positioning");
+                $("#posType").text("position: "+(useAbs ? "absolute" : "fixed"))
+            })
+        });
+
+    </script>
+
 </body>
 </html>
